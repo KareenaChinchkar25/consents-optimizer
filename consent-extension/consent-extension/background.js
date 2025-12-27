@@ -67,7 +67,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       sentConsents.clear();
     }
 
-    fetch("http://localhost:4000/consents", {
+    fetch("https://consent-flow-optimizer.onrender.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formatted),
@@ -114,7 +114,7 @@ chrome.runtime.onMessageExternal.addListener((msg, sender, sendResponse) => {
   console.log("External message received:", msg);
   if (msg.type === "OPEN_SITE_SETTINGS" && msg.site) {
     try {
-      // ✅ FORCE origin parsing (this is the key)
+      
       const origin = new URL(msg.site).origin;
       const encoded = encodeURIComponent(origin);
 

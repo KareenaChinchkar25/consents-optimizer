@@ -131,7 +131,7 @@
     border-left: 6px solid ${color};
   `;
 
-  // ❌ BUTTON REMOVED
+
   toast.innerHTML = `
     <div style="font-weight:600">Permission ${status}</div>
     <div style="margin-top:4px;font-size:14px">
@@ -145,7 +145,7 @@
   shadow.appendChild(toast);
   document.documentElement.appendChild(root);
 
-  // Auto-remove toast after 6 seconds
+ 
   setTimeout(() => root.remove(), 6000);
 }
 

@@ -155,7 +155,7 @@ const handleManageConsent = async () => {
     const domain = getDisplayWebsite(consent.website);
     const site = `https://${domain}`;
 
-    // ✅ Explicit external messaging attempt
+    
     if (window.chrome?.runtime?.sendMessage) {
       window.chrome.runtime.sendMessage(
         EXTENSION_ID,
