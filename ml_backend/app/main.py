@@ -2,15 +2,15 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
 
-from schemas import ConsentInput
-from prediction import predict_single_consent
-from utils import validate_input_data
+from app.schemas import ConsentInput
+from app.prediction import predict_single_consent
+from app.utils import validate_input_data
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # tighten later
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
